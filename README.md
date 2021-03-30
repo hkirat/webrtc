@@ -266,6 +266,7 @@ Check out the **[contributing wiki](https://github.com/pion/webrtc/wiki/Contribu
 * [Reese](https://github.com/figadore)
 * [David Zhao](https://github.com/davidzhao)
 * [Nam V. Do](https://github.com/namvdo)
+* [Benny Daon](https://github.com/daonb)
 
 ### License
 MIT License - see [LICENSE](LICENSE) for full text
