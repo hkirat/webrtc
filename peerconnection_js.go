@@ -488,6 +488,20 @@ func (pc *PeerConnection) setGatherCompleteHandler(handler func()) {
 	}
 }
 
+func (pc *PeerConnection) AddTransceiver(codecType RTPCodecType) (err error) {
+	defer func() {
+		if e := recover(); e != nil {
+			err = recoveryToError(e)
+		}
+	}()
+
+	params := []interface{}{"video", map[string]interface{}{"direction": "recvonly"}}
+	promise := pc.underlying.Call("addTransceiver", params)
+	_, err = awaitPromise(promise)
+
+	return err
+}
+
 // Converts a Configuration to js.Value so it can be passed
 // through to the JavaScript WebRTC API. Any zero values are converted to
 // js.Undefined(), which will result in the default value being used.
